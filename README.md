@@ -27,18 +27,25 @@ Item("", "1234", 200, 10.0)], payment = 100  --> Нема име како арг
 
 T && T && T
 item.getPrice() >= 300, item.getDiscount() > 0, item.getBarcode().charAt(0) == '0'  --> Исполнети се сите три услови 
+
 T && T && F
 item.getPrice() >= 300, item.getDiscount() > 0, item.getBarcode().charAt(0) != '0'  --> Исполнети се само првите два услови
+
 T && F && T
 item.getPrice() >= 300, item.getDiscount() <= 0, item.getBarcode().charAt(0) == '0'  --> Исполнети се само првиот и третиот услов
+
 T && F && F
 item.getPrice() >= 300, item.getDiscount() <= 0, item.getBarcode().charAt(0) != '0'  --> Исполнет е само првиот услов
+
 F && T && T
 item.getPrice() < 300, item.getDiscount() > 0, item.getBarcode().charAt(0) == '0'  --> Исполнети се само вториот и третиот услов
+
 F && T && F
 item.getPrice() < 300, item.getDiscount() > 0, item.getBarcode().charAt(0) != '0'  --> Исполнет е само вториот услов
+
 F && F && T
 item.getPrice() < 300, item.getDiscount() <= 0, item.getBarcode().charAt(0) == '0' --> Исполнет е само третиот услов
+
 F && F && F
 item.getPrice() < 300, item.getDiscount() <= 0, item.getBarcode().charAt(0) != '0' --> Не е исполнет ниту еден услов
 
